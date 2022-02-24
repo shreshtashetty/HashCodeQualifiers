@@ -69,25 +69,40 @@ class Solution:
             self.projects = projs
             return 
 
-    def get_right_candidate(self, project = "Logging"):
+    def find_candidate(self):
+        for i in s.projects.keys():
+        #print(i)
+            s.eligible_candidate(i)
+
+    def eligible_candidate(self, project):
         num_skills = int(self.projects[project][3])
-        for _ in range(num_skills):
-            skill = self.projects[project][-1]
-            for i in self.contributors.keys():
-                for j in self.contributors[i]:
-                    #print(j)
-                    if(j[0] == skill[0]):
-                        if(int(j[1]) >= int(skill[1])):
+        for i in range(1,num_skills+1):
+            skill = self.projects[project][3+i]
+            #print("Skill ",skill)
+            
+            for j in self.contributors.keys():
+
+                for k in self.contributors[j]:
+                    #print(k[0])
+                    
+                    if (k[0] == skill[0]):
+                        if(int(k[1]) >= int(skill[1])):
                             print("match")
-                            print(i,j)
+                            print(j,k)
                             print(project)
+                            
+             
+
+
+
+        
 
 if __name__ == "__main__":
     s = Solution()
     s.fileParser("a_an_example.in.txt")
-    #print(s.projects["Logging"])
+    #print(s.projects)
     #print(s.contributors)
+    s.find_candidate()
     
-    for i in s.projects.keys():
-        s.get_right_candidate(i)
+    
         
