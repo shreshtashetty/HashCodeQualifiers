@@ -1,4 +1,3 @@
-from collections import defaultdict
 
 def fileParser(path):
     with open(path, 'r') as f:
