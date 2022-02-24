@@ -26,7 +26,7 @@ class Solution:
             print(i)
 
     # Shreshta's Parser
-    def fileParser(path):
+    def fileParser(self, path):
         with open(path, 'r') as f:
             lines = f.readlines()
             # print(lines)
@@ -65,10 +65,13 @@ class Solution:
                         projs[proj_name].append((line[0], int(line[1])))
                         i += 1
             # print(contribs, projs)
-            return self.contributors, self.projects
+            self.contributors = contribs
+            self.projects = projs
+            return 
 
 
 
 if __name__ == "__main__":
     s = Solution()
     s.fileParser("a_an_example.in.txt")
+    print(s.projects)
