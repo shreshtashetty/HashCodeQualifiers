@@ -80,7 +80,7 @@ class Solution:
                         if(int(j[1]) >= int(skill[1])):
                             print("match")
                             print(i,j)
-                            print(skill)
+                            print(project)
 
 if __name__ == "__main__":
     s = Solution()
