@@ -23,7 +23,7 @@ def fileParser(path):
 
                 for j in range(i, num_skills+i):
                     line = lines[j].split()
-                    contribs[name].append((line[0], int(line[1])))
+                    contribs[name].append([line[0], int(line[1])])
                 i += num_skills
 
             else:
