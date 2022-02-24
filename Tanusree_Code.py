@@ -53,21 +53,14 @@ def findContributer(path):
     skillInd = 3
     projContributer = {}
     for p,v in proj.items():
+        projContributer[p] = [v[2],v[0]]
         for i in range(skillInd+1,(skillInd + v[skillInd] + 1)):
             if v[i] in skills:
-                if p in projContributer:
-                    projContributer[p].extend(skills[v[i]])
-                else:
-                    projContributer[p] = []
-                    projContributer[p].extend(skills[v[i]])
+                projContributer[p].extend(skills[v[i]])
             else:
                 for k in skills:
                     if v[i][0] == k[0]:
-                        if p in projContributer:
-                            projContributer[p].extend(skills[k])
-                        else:
-                            projContributer[p] = []
-                            projContributer[p].extend(skills[k])
+                        projContributer[p].extend(skills[k])
                         
         skillInd = 3
     return projContributer
