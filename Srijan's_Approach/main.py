@@ -70,19 +70,24 @@ class Solution:
             return 
 
     def get_right_candidate(self, project = "Logging"):
-        skill = self.projects[project][-1]
-        for i in self.contributors.keys():
-            for j in self.contributors[i]:
-                #print(j)
-                if(j[0] == skill[0]):
-                    if(int(j[1]) >= int(skill[1])):
-                        print("match")
-                        print(i,j)
-        print(skill)
+        num_skills = int(self.projects[project][3])
+        for _ in range(num_skills):
+            skill = self.projects[project][-1]
+            for i in self.contributors.keys():
+                for j in self.contributors[i]:
+                    #print(j)
+                    if(j[0] == skill[0]):
+                        if(int(j[1]) >= int(skill[1])):
+                            print("match")
+                            print(i,j)
+                            print(skill)
 
 if __name__ == "__main__":
     s = Solution()
     s.fileParser("a_an_example.in.txt")
-    print(s.projects["Logging"])
+    #print(s.projects["Logging"])
     #print(s.contributors)
-    s.get_right_candidate()
+    
+    for i in s.projects.keys():
+        s.get_right_candidate(i)
+        
