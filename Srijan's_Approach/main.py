@@ -75,7 +75,7 @@ class Solution:
             for j in self.contributors[i]:
                 #print(j)
                 if(j[0] == skill[0]):
-                    if(int(j[1]) >= int(skill[1]) - 1):
+                    if(int(j[1]) >= int(skill[1])):
                         print("match")
                         print(i,j)
         print(skill)
