@@ -53,17 +53,24 @@ def findContributer(path):
     skillInd = 3
     projContributer = {}
     for p,v in proj.items():
-        for i in range(skillInd,(skillInd + v[skillInd] + 1)):
-            print(i,p,skills[i+1])
-            if i in skills:
+        for i in range(skillInd+1,(skillInd + v[skillInd] + 1)):
+            if v[i] in skills:
                 if p in projContributer:
-                    projContributer[p].append(skills[i])
+                    projContributer[p].extend(skills[v[i]])
                 else:
-                    projContributer[p] = skills[i]
+                    projContributer[p] = []
+                    projContributer[p].extend(skills[v[i]])
+            else:
+                for k in skills:
+                    if v[i][0] == k[0]:
+                        if p in projContributer:
+                            projContributer[p].extend(skills[k])
+                        else:
+                            projContributer[p] = []
+                            projContributer[p].extend(skills[k])
+                        
         skillInd = 3
     return projContributer
-            
-            
              
 if __name__ == '__main__':
     PATH = "D:\\Projects\\Python Scripts\\GoogleHashCode2022\\CouseSchedule\\InputData\\a_example.txt"          
