@@ -1,6 +1,6 @@
 # Algorithm
 
-## get_right_candidate
+## eligible_candidate
 
 one argument as project name
 
