@@ -15,7 +15,7 @@ def fileParser(path):
             if len(line) > 2:
                 flag = 1
             if flag == 0:
-                print("Contribs:", line)
+                # print("Contribs:", line)
                 name = line[0]
                 num_skills = int(line[1])
                 i += 1
@@ -38,10 +38,10 @@ def fileParser(path):
                 else:
                     projs[proj_name].append((line[0], int(line[1])))
                     i += 1
-
+        # print(contribs, projs)
         return contribs, projs
 
 
 
 
-fileParser(r'C:\Users\manji\PycharmProjects\HashCodeQualifiers\input_data\a_an_example.in.txt')
+fileParser(r'C:\Users\manji\PycharmProjects\HashCodeQualifiers\input_data\b_better_start_small.in.txt')
